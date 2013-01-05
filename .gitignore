@@ -1,0 +1,11 @@
+# Gedit backup files
+*~
+
+# Ignore Idea Files
+*.iml
+.idea
+
+# Ignore Eclipse Files
+.classpath
+.settings
+.project
