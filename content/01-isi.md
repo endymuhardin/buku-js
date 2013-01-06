@@ -208,6 +208,41 @@ hewan.getType();
 _Catatan: keknya code Javascript di atas juga ga bagus. LOL. 
 Mungkin harus baca ulang demo-nya jresig lagi_
 
+Seperti yang bisa dilihat `this.type` pada `type()` tidak merujuk 
+pada _instance variable_. Malah, _class_ `Manusia` dan `Hewan` 
+merujuk `getType`-nya pada fungsi global `type` -- dan tetap valid!
+
+Konteks yang bisa berubah seperti ini biasanya menyulitkan pemula,
+misalnya ketika membuat _event handler_ pada _callback_.
+
+~~~~ {.js}
+function RandomClass() {
+  this.ajaxResponse = null;
+
+  this.doRandomStuff = function() {
+    // ... random stuff
+  }
+
+  this.processAjaxResponse = function(data, text, xhr){
+    this.ajaxResponse = data;
+    this.doRandomStuff(); 
+  };
+}
+
+randomClass = new RandomClass;
+
+jQuery.ajax('http://example.com/someResource', {
+  success: randomClass.processAjaxResponse
+});
+~~~~
+
+Ketika AJAX request berhasil, _call_ ke `doRandomStuff()` didalam 
+`processAjaxResponse` tidak akan `resolve`. Kenapa? Karena konteks
+sudah pindah ke _method_ yang memanggil `success`.
+
+Salah satu solusinya adalah membuat _early binding_ antara konteks
+dengan _handler_ dengan _class_-nya.
+
 ### Immediate Function ###
 
 ## Object ##
