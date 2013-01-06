@@ -146,6 +146,34 @@ kirimkan pull request ke saya. Nanti akan saya merge ke repository saya.
 
 ### `this` Scope ###
 
+Pada kebanyakan bahasa pemrograman berorientasi obyek, 
+`this` digunakan di dalam _method_ untuk merujuk kepada _class_ dimana _method_
+tersebut bernaung -- konteks. Javascript tidak mengadopsi pendekatan seperti ini.
+
+Penggunaan `this` pada Javascript merujuk kepada _caller_ (pemanggil).
+
+~~~~ {.js}
+function type() {
+  console.log(this.type);
+}
+
+function Manusia() {
+  this.type = 'Manusia';
+  this.getType = type;
+}
+
+function Hewan() {
+  this.type = 'Hewan';
+  this.getType = type;
+}
+
+var manusia = new Manusia();
+manusia.getType();
+
+var hewan = new Hewan();
+hewan.getType();
+~~~~
+
 ### Immediate Function ###
 
 ## Object ##
