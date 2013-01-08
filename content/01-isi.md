@@ -243,6 +243,8 @@ sudah pindah ke _method_ yang memanggil `success`.
 Salah satu solusinya adalah membuat _early binding_ antara konteks
 yang diinginkan dengan dengan _handler_.
 
+_Coba ingat lagi topik Context di http://ejohn.org/apps/learn/#22_
+
 ### Immediate Function ###
 
 ## Object ##
