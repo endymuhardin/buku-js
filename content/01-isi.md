@@ -144,20 +144,20 @@ Pemahaman _function_ pada JavaScript sangat penting. Perlu diingat bahwa
 _function_ di JavaScript adalah _object_.
 
 _Object_ pada JavaScript memiliki karakteristik sebagai berikut:
-- dapat di-*assign* ke variabel, elemen array, atau ke properti milik _object_ lain
-- dapat di-*pass* sebagai argumen ke _function_
-- dapat dikembalikan (*return*) dari _function_
+- dapat di- _assigned_ ke variabel, elemen array, atau ke properti milik _object_ lain
+- dapat di- _passed_ sebagai argumen ke _function_
+- dapat dikembalikan ( _return_ ) dari _function_
 - dapat memiliki properti yang bisa dibuat secara dinamis
-- dapat dibuat melalui literal (contohnya: {} adalah _object_ di JavaScript)
+- dapat dibuat melalui literal (contohnya: {} adalah object di JavaScript)
 
 _Function_ mewarisi segala karakteristik _object_ tersebut, oleh karena itu 
 _function_  disebut sebagai _first-class object_.
 
 Selain karakteristik di atas, _function_ juga punya kelebihan yaitu bisa 
 di _invoke_ (dipanggil untuk menjalankan rutin yang ada di dalam _function_).
-Pemanggilan _function_ (*function invocation*) juga terkadang bisa dilakukan
-dengan cara asinkron (*asynchronous*), misalnya dalam kasus menangani event AJAX
-(AJAX *event handler*). Perhatikan contoh di bawah ini.
+Pemanggilan _function_ ( _function invocation_ ) juga terkadang bisa dilakukan
+dengan cara asinkron ( _asynchronous_ ), misalnya dalam kasus menangani event AJAX
+(AJAX _event handler_). Perhatikan contoh di bawah ini.
 
 ~~~~ {.js}
 function getHandler(data, status, jqXHR){
