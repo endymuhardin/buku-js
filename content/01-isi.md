@@ -172,7 +172,7 @@ jQuery.ajax({
 ~~~~
 
 
-> **Referensi**
+> **Referensi**  
 > Penjelasan tentang _function_ sebagai _first-class object_ bersumber dari
 > buku Secret of the JavaScript Ninja, bab 3.
 
