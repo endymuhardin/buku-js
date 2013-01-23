@@ -237,11 +237,11 @@ jQuery.ajax('http://example.com/someResource', {
 ~~~~
 
 Ketika AJAX request berhasil, _call_ ke `doRandomStuff()` didalam 
-`processAjaxResponse` tidak akan _resolve_. Kenapa? Karena konteks
+`processAjaxResponse` tidak akan `resolve`. Kenapa? Karena konteks
 sudah pindah ke _method_ yang memanggil `success`.
 
 Salah satu solusinya adalah membuat _early binding_ antara konteks
-yang diinginkan dengan dengan _handler_.
+dengan _handler_ dengan _class_-nya.
 
 ### Immediate Function ###
 
