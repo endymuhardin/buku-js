@@ -140,6 +140,42 @@ kirimkan pull request ke saya. Nanti akan saya merge ke repository saya.
 
 ## Function and Closure ##
 
+Pemahaman _function_ pada JavaScript sangat penting. Perlu diingat bahwa
+_function_ di JavaScript adalah _object_.
+
+_Object_ pada JavaScript memiliki karakteristik sebagai berikut:
+- dapat di-_assign_ ke variabel, elemen array, atau ke properti milik _object_ lain
+- dapat di-_pass_ sebagai argumen ke _function_
+- dapat dikembalikan (_return_) dari _function_
+- dapat memiliki properti yang bisa dibuat secara dinamis
+- dapat dibuat melalui literal (contohnya: {} adalah object di JavaScript)
+
+_Function_ mewarisi segala karakteristik _object_ tersebut, oleh karena itu 
+_function_  disebut sebagai _first-class object_.
+
+Selain karakteristik di atas, _function_ juga punya kelebihan yaitu bisa 
+di _invoke_ (dipanggil untuk menjalankan rutin yang ada di dalam _function_).
+Pemanggilan _function_ (_function invocation_) juga terkadang bisa dilakukan
+dengan cara asinkron (_asynchronous_), misalnya dalam kasus menangani event AJAX
+(AJAX _event handler_). Perhatikan contoh di bawah ini.
+
+~~~~ {.js}
+function getHandler(data, status, jqXHR){
+  // ... detail handler disini
+}
+
+jQuery.ajax({
+  async: true,
+  url: 'http://example.com/ajax/resource/1',
+  success: getHandler
+});
+~~~~
+
+> **Referensi**
+>
+> Penjelasan tentang _function_ sebagai _first-class object_ bersumber dari
+> buku Secret of the JavaScript Ninja, bab 3.
+
 ### Callback Pattern ###
 
 ### Returning Pattern ###
