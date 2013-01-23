@@ -148,40 +148,9 @@ kirimkan pull request ke saya. Nanti akan saya merge ke repository saya.
 
 Pada kebanyakan bahasa pemrograman berorientasi obyek, 
 `this` digunakan di dalam _method_ untuk merujuk kepada _class_ dimana _method_
-tersebut bernaung -- sederhananya: membangun konteks.
+tersebut bernaung -- konteks. Javascript tidak mengadopsi pendekatan seperti ini.
 
-~~~~ {.php}
-<?php
-
-  abstract class MahlukHidup {
-    abstract public function getType(); 
-  }
-
-  class Manusia extends MahlukHidup {
-    private $_type = 'Manusia';
-
-    public function getType() {
-      return $this->_type;
-    }
-  }
-
-  class Hewan extends MahlukHidup {
-    private $_type = 'Hewan';
-
-    public function getType() {
-      return $this->_type;
-    }
-  }
-
-  $manusia = new Manusia;
-  echo $manusia->getType();
-?>
-~~~~
-
-_Catatan: keknya code PHP-nya di atas ga bagus *dan* kurang bisa mewakili
-contoh untuk membandingkan dengan pendekatan Javascript_
-
-Javascript tidak mengadopsi pendekatan seperti di atas. Penggunaan `this` pada Javascript merujuk kepada _caller_ (pemanggil).
+Penggunaan `this` pada Javascript merujuk kepada _caller_ (pemanggil).
 
 ~~~~ {.js}
 function type() {
@@ -204,9 +173,6 @@ manusia.getType();
 var hewan = new Hewan();
 hewan.getType();
 ~~~~
-
-_Catatan: keknya code Javascript di atas juga ga bagus. LOL. Mungkin
-harus ulang baca demo-nya jresig lagi_
 
 ### Immediate Function ###
 
