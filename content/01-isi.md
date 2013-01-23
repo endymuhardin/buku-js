@@ -152,6 +152,7 @@ tersebut bernaung -- sederhananya: membangun konteks.
 
 ~~~~ {.php}
 <?php
+
   abstract class MahlukHidup {
     abstract public function getType(); 
   }
@@ -177,11 +178,10 @@ tersebut bernaung -- sederhananya: membangun konteks.
 ?>
 ~~~~
 
-_Catatan: keknya code PHP-nya di atas ga bagus *dan* kurang 
-bisa mewakili contoh untuk membandingkan dengan pendekatan Javascript_
+_Catatan: keknya code PHP-nya di atas ga bagus *dan* kurang bisa mewakili
+contoh untuk membandingkan dengan pendekatan Javascript_
 
-Javascript tidak mengadopsi pendekatan seperti di atas. 
-Penggunaan `this` pada Javascript merujuk kepada _caller_ (pemanggil).
+Javascript tidak mengadopsi pendekatan seperti di atas. Penggunaan `this` pada Javascript merujuk kepada _caller_ (pemanggil).
 
 ~~~~ {.js}
 function type() {
@@ -205,8 +205,8 @@ var hewan = new Hewan();
 hewan.getType();
 ~~~~
 
-_Catatan: keknya code Javascript di atas juga ga bagus. LOL. 
-Mungkin harus baca ulang demo-nya jresig lagi_
+_Catatan: keknya code Javascript di atas juga ga bagus. LOL. Mungkin
+harus ulang baca demo-nya jresig lagi_
 
 ### Immediate Function ###
 
