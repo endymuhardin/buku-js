@@ -130,7 +130,7 @@ kirimkan pull request ke saya. Nanti akan saya merge ke repository saya.
 
 ## Variabel ##
 
-Perhatikan conntoh berikut ini :
+Perhatikan conntoh dibawah ini :
 
 ~~~~javascript
 var x = 2;
@@ -147,7 +147,7 @@ Dalam penamaan sebuah variabel kita dapat menggunakan huruf seperti x, y, z, w, 
 1. Nama variabel harus diawali dengan huruf
 2. Nama variabel bisa juga diawali dengan tanda dolas ($) dan garis bawah (_)
 3. Nama varaibel bersifat case sensitif artinya antara Huruf (H besar) dengan huruf (h kecil) adalah kata berbeda.
-4. Nama varaibel tidak boleh menggunakan kata-kata yang merupakan perintah atau kata kunci dalam JavaScript.
+4. Nama varaibel tidak boleh menggunakan kata - kata yang merupakan perintah atau kata kunci dalam JavaScript.
 
 ### Deklarasi Variabel ###
 
