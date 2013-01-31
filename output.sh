@@ -1,0 +1,1 @@
+pandoc --template resources/artivisi-template.tex --toc -N -o output/buku-js.pdf content/*md

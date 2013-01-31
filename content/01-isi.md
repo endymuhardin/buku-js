@@ -128,7 +128,124 @@ kirimkan pull request ke saya. Nanti akan saya merge ke repository saya.
 
 # Konsep Dasar JavaScript #
 
+## Variabel ##
+
+Perhatikan conntoh dibawah ini :
+
+~~~~javascript
+var x = 2;
+var y = 4
+var z = x - y;
+~~~~
+
+Ingat pelajaran aljabar? dalam aljabar kita menggunakan huruf (seperti x) untuk menyimpan sebuah nilai (seperti 4) dan dari ekspresi matematika z = x - y kita bisa mengetahui bahwa nilai z adalah -2. Lalu apa hubungannya dengan JavaScript, dalam bahasa pemrograman huruf x, y dan z disebut variabel sedangkan 2, 4 dan x -y adalah value atau nilai dari sebuah variabel. Seperti halnya dalam aljabar, variabel juga dapat digunakan untuk menampung nilai - nilai (x = 4) dan sebuah ekspresi (z = x - y) hanya saja memang sebuah variabel tidak hanya bisa menampung nilai atau ekspresi matematika. Jadi dari sini kita dapat menyimpulkan bahwa variabel adalah mekanisme untuk menampung suatu nilai tertentu pada sebuah bahasa pemrograman yang memiliki nama dan nilai.
+
+### Aturan Nama Variabel ###
+
+Dalam penamaan sebuah variabel kita dapat menggunakan huruf seperti x, y, z, w, dll atau sesuatu yang lebih deskriptif seperti nama, umur, alamat, dll. Dalam JavaScript sendiri memiliki sebuah aturan yang baku digunakan dalam penamaan sebuah variabel. Adapun aturannya adalah sebagai berikut :
+
+1. Nama variabel harus diawali dengan huruf
+2. Nama variabel bisa juga diawali dengan tanda dolas ($) dan garis bawah (_)
+3. Nama varaibel bersifat case sensitif artinya antara Huruf (H besar) dengan huruf (h kecil) adalah kata berbeda.
+4. Nama varaibel tidak boleh menggunakan kata - kata yang merupakan perintah atau kata kunci dalam JavaScript.
+
+### Deklarasi Variabel ###
+
+Pada JavaScript secara umum pendeklarasian sebuah variabel adalah sebagai berikut :
+
+~~~~
+var nama_variabel = value;
+~~~~ 
+
+atau
+
+~~~~
+var nama_variabel;
+nama_variabel = value;
+~~~~
+
+Contohnya adalah sebagai berikut :
+
+~~~~javascript
+var kendaraan = "Kijang Innova";
+
+// Atau bisa juga
+
+var cc;
+cc = 1989;
+~~~~
+
+Selain pada contoh diatas, kita juga dapat mendeklarasikan banyak variabel dalam satu statement seperti berikut :
+
+~~~~javascript
+var nama="Nana", age=23, job="administrasi";
+
+// Atau bisa juga
+
+var nama="Nana",
+age=23,
+job="administrasi";
+~~~~
+
 ## Primitive Data Type ##
+
+Sama seperti pada pemrograman PHP, JavaScript tidak memiliki tipe data secara eksplisit hal ini karena JavaScript kita bisa mendeklarasikan sebuah variabel tanpa menentukan tipe data yang digunakan. Tetapi meski demikian, terdapat empat tipe data implisit pada JavaScript, antara lain :
+
+1. Numerik, untuk menampung nilai bertipe bilangan,
+2. String, untuk menampung nilai bertipe string,
+3. Boolean, untuk nilai *true* dan *false*
+4. Null, adalah variabel yang tidak di inisialisasi
+
+### Tipe Numerik ###
+
+Pada JavaScript, kita hanya mengenal satu tipe untuk numerik, tetapi bisa ditulis dengan menggunakan koma (decimal) atau tidak. Contohnya adalah sebagai berikut :
+
+~~~~javascript
+var x1 = 12.45; // Menggunakan tanda koma (desimal)
+var x2 = 1200; // Tidak menggunakan tanda koma (desimal)
+~~~~
+
+Selain penulisan seperti diatas, kita  juga bisa menuliskan tipe numerik di JavaScript dengan menggunakan notasi ilmiah atau exponential. Contohnya adalah sebagai berikut :
+
+~~~~javascript
+var x1 = 1e6; // 1000000
+var x2 = 5e-4; // 0.00005
+~~~~
+
+### Tipe String ###
+
+Perhatikan contoh variabel dibawah ini :
+
+~~~~javascript
+var nama = "Nama saya Noor Adiana";
+var alamat = 'Kramat Jati';
+var hari = "Sekarang hari jum'at";
+var kalimat = 'Saya sering di panggil "Dulloh"';
+~~~~
+
+Dari contoh diatas, kita dapat melihat bahwa tipe string digunakan untuk menampung serangkaian karakter seperti "Noor Adiana" , 'Saya sering di panggil "Dulloh"' , dll. Kita juga melihat bahwa, untuk pendefinisian sebuah string dapat menggunakan tanda kutip ganda ("...") atau juga tanda kutip tunggal ('...'), selain itu kita juga bisa menggunakan tanda kutip dalam rangkaian string selama tidak sama dengan yang mengapit string tersebut, seperti pada "Sekarang hari jum'at" dan 'Saya sering di panggil "Dulloh"'.
+
+### Tipe Boolean ###
+
+Tipe data boolean, seperti halnya pada pemrograman lain, hanya dapat menampung dua buah nilai, yaitu true dan false. Tipe boolean biasanya digunakan pada uji kondisional seperti pada *if*. Contoh tipe data boolean :
+
+~~~~javascript
+// bernilai true karena 10 memang lebih besar dari 5
+var nilai_true = (10 > 5);
+
+// bernilai false karena 100 tidak sama dengan 10
+var nilai_false = (100 == 10);
+~~~~ 
+
+### Tipe Null ###
+
+Tipe ini adalah sebuah variabel yang belum di inisiallisaikan atau di beri sebuah nilai, baik itu string, numerik atau boolean. Contohnya adalah sebagai berikut :
+
+~~~~javascript
+var nama;
+var alamat;
+// variabel lainnya disini
+~~~~
 
 ## Operators ##
 
