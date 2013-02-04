@@ -257,108 +257,47 @@ var alamat;
 
 ## Function and Closure ##
 
+Pemahaman _function_ pada JavaScript sangat penting. Perlu diingat bahwa
+_function_ di JavaScript adalah _object_.
+
+_Object_ pada JavaScript memiliki karakteristik sebagai berikut:
+- dapat di- _assigned_ ke variabel, elemen array, atau ke properti milik _object_ lain
+- dapat di- _passed_ sebagai argumen ke _function_
+- dapat dikembalikan ( _return_ ) dari _function_
+- dapat memiliki properti yang bisa dibuat secara dinamis
+- dapat dibuat melalui literal (contohnya: {} adalah object di JavaScript)
+
+_Function_ mewarisi segala karakteristik _object_ tersebut, oleh karena itu 
+_function_  disebut sebagai _first-class object_.
+
+Selain karakteristik di atas, _function_ juga punya kelebihan yaitu bisa 
+di _invoke_ (dipanggil untuk menjalankan rutin yang ada di dalam _function_).
+Pemanggilan _function_ ( _function invocation_ ) juga terkadang bisa dilakukan
+dengan cara asinkron ( _asynchronous_ ), misalnya dalam kasus menangani event AJAX
+(AJAX _event handler_). Perhatikan contoh di bawah ini.
+
+~~~~ {.js}
+function getHandler(data, status, jqXHR){
+  // ... detail handler disini
+}
+
+jQuery.ajax({
+  async: true,
+  url: 'http://example.com/ajax/resource/1',
+  success: getHandler
+});
+~~~~
+
+
+> **Referensi**  
+> Penjelasan tentang _function_ sebagai _first-class object_ bersumber dari
+> buku Secret of the JavaScript Ninja, bab 3.
+
 ### Callback Pattern ###
 
 ### Returning Pattern ###
 
 ### `this` Scope ###
-
-Pada kebanyakan bahasa pemrograman berorientasi obyek, 
-`this` digunakan di dalam _method_ untuk merujuk kepada _class_ dimana _method_
-tersebut bernaung -- sederhananya: membangun konteks.
-
-~~~~ {.php}
-<?php
-  abstract class MahlukHidup {
-    abstract public function getType(); 
-  }
-
-  class Manusia extends MahlukHidup {
-    private $_type = 'Manusia';
-
-    public function getType() {
-      return $this->_type;
-    }
-  }
-
-  class Hewan extends MahlukHidup {
-    private $_type = 'Hewan';
-
-    public function getType() {
-      return $this->_type;
-    }
-  }
-
-  $manusia = new Manusia;
-  echo $manusia->getType();
-?>
-~~~~
-
-_Catatan: keknya code PHP-nya di atas ga bagus *dan* kurang 
-bisa mewakili contoh untuk membandingkan dengan pendekatan Javascript_
-
-Javascript tidak mengadopsi pendekatan seperti di atas. 
-Penggunaan `this` pada Javascript merujuk kepada _caller_ (pemanggil).
-
-~~~~ {.js}
-function type() {
-  console.log(this.type);
-}
-
-function Manusia() {
-  this.type = 'Manusia';
-  this.getType = type;
-}
-
-function Hewan() {
-  this.type = 'Hewan';
-  this.getType = type;
-}
-
-var manusia = new Manusia();
-manusia.getType();
-
-var hewan = new Hewan();
-hewan.getType();
-~~~~
-
-_Catatan: keknya code Javascript di atas juga ga bagus. LOL. 
-Mungkin harus baca ulang demo-nya jresig lagi_
-
-Seperti yang bisa dilihat `this.type` pada `type()` tidak merujuk 
-pada _instance variable_. Malah, _class_ `Manusia` dan `Hewan` 
-merujuk `getType`-nya pada fungsi global `type` -- dan tetap valid!
-
-Konteks yang bisa berubah seperti ini biasanya menyulitkan pemula,
-misalnya ketika membuat _event handler_ pada _callback_.
-
-~~~~ {.js}
-function RandomClass() {
-  this.ajaxResponse = null;
-
-  this.doRandomStuff = function() {
-    // ... random stuff
-  }
-
-  this.processAjaxResponse = function(data, text, xhr){
-    this.ajaxResponse = data;
-    this.doRandomStuff(); 
-  };
-}
-
-randomClass = new RandomClass;
-
-jQuery.ajax('http://example.com/someResource', {
-  success: randomClass.processAjaxResponse
-});
-~~~~
-
-Ketika AJAX request berhasil, _call_ ke `doRandomStuff()` didalam 
-`processAjaxResponse` tidak akan _resolve_. Kenapa? Karena konteks
-sudah pindah ke _method_ yang memanggil `success`.
-
-Salah satu solusinya adalah membuat _early binding_ antara konteks
-yang diinginkan dengan dengan _handler_.
 
 _Coba ingat lagi topik Context di http://ejohn.org/apps/learn/#22_
 
