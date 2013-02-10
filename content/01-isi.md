@@ -189,12 +189,13 @@ job="administrasi";
 
 ## Primitive Data Type ##
 
-Sama seperti pada pemrograman PHP, JavaScript tidak memiliki tipe data secara eksplisit hal ini karena JavaScript kita bisa mendeklarasikan sebuah variabel tanpa menentukan tipe data yang digunakan. Tetapi meski demikian, terdapat empat tipe data implisit pada JavaScript, antara lain :
+Sama seperti pada pemrograman PHP, JavaScript tidak memiliki tipe data secara eksplisit. Hal ini karena pada JavaScript kita bisa mendeklarasikan sebuah variabel tanpa menentukan tipe data yang digunakan. Tetapi meski demikian, terdapat lima tipe data implisit pada JavaScript, antara lain :
 
 1. Numerik, untuk menampung nilai bertipe bilangan,
 2. String, untuk menampung nilai bertipe string,
 3. Boolean, untuk nilai *true* dan *false*
 4. Null, adalah variabel yang tidak di inisialisasi
+5. Undefined, mewakili nilai yang tidak ada atau tidak dikenali
 
 ### Tipe Numerik ###
 
